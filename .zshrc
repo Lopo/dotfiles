@@ -1,8 +1,13 @@
+# set default editor
+export EDITOR="vim"
+
 # use own theme(s)
 export ZSH_THEME="$HOME/.omz"
 
-autoload -U compinit
-compinit
+export PATH="$PATH:$HOME/bin:$(ruby -rubygems -e "puts Gem.user_dir")/bin"
+
+autoload -U compinit promptinit
+compinit; promptinit
 
 autoload omz
 zstyle :omz:style theme ebi
@@ -10,5 +15,7 @@ zstyle :omz:style theme ebi
 plugins=(colorizer git notfound)
 omz init
 
-# set default editor
-export EDITOR="vim"
+alias \
+    composer="php $HOME/bin/composer.phar" \
+    df="df -Th --total"
+
