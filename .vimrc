@@ -2,6 +2,10 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,iso-8859-2,latin2
+
 filetype plugin indent on
 if &t_Co > 2 || has('gui_running')
 	syntax on "turn on syntax highlighting
